@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="sign" type="com.emi.commentdemo.SigninActivity"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+            <ImageView
+                    style="@style/AppTheme"
+                    android:id="@+id/googleIcon"
+                    android:contentDescription="@string/desc_login"
+                    android:src="@drawable/google_logo1600"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"/>
+
+            <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/logo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_marginBottom="@dimen/title_bottom_margin"
+                    android:text="@string/google_title_text"
+            />
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/design_default_color_background">
+
+            <com.google.android.gms.common.SignInButton
+                    android:id="@+id/signInButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> sign.signIns()}"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    tools:visibility="gone" />
+
+            <LinearLayout
+                    android:id="@+id/signOutAndDisconnect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                <Button
+                        android:id="@+id/signOutButton"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> sign.signOut()}"
+                        android:layout_weight="1"
+                        android:text="@string/sign_out"
+                        android:theme="@style/ThemeOverlay.MaterialComponents" />
+
+                <Button
+                        android:id="@+id/disconnectButton"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> sign.revokeAccess()}"
+                        android:layout_weight="1"
+                        android:text="@string/disconnect"
+                        android:theme="@style/ThemeOverlay.MaterialComponents" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

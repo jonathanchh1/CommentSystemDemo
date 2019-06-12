@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CommentDemo</string>
+    <string name="loading">loading...</string>
+    <string name="google_response">successful access</string>
+    <string name="msg">received token</string>
+    <string name="desc_login">login icon</string>
+    <string name="google_title_text">Test Login</string>
+    <string name="sign_out">sign out</string>
+    <string name="disconnect">disconnect</string>
+    <string name="signed_out">sign out</string>
+    <string name="settings">sign out</string>
+    <string name="disconnects">Disconnect</string>
+</resources>
